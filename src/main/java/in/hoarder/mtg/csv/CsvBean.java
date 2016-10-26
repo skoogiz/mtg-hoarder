@@ -3,8 +3,6 @@
  */
 package in.hoarder.mtg.csv;
 
-import in.hoarder.mtg.item.Item;
-
 /**
  * 
  * Interface used to represent a row in a CSV file.
@@ -12,7 +10,6 @@ import in.hoarder.mtg.item.Item;
  * @author skoogiz
  *
  */
-public interface CsvBean<I extends Item>
+public interface CsvBean
 {
-    I toItem();
 }

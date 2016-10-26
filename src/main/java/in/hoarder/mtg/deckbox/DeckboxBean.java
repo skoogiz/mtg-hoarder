@@ -13,7 +13,7 @@ import in.hoarder.mtg.csv.FlagBeanField;
  * @author skoogiz
  *
  */
-public class DeckboxBean implements CsvBean<DeckboxItem>
+public class DeckboxBean implements CsvBean
 {
     @CsvBindByName()
     public int count;
@@ -74,10 +74,4 @@ public class DeckboxBean implements CsvBean<DeckboxItem>
 
     @CsvBindByName(column = "Image URL")
     public String imageURL;
-
-    @Override
-    public DeckboxItem toItem()
-    {
-        return DeckboxItem.create(this);
-    }
 }

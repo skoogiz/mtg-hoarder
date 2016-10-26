@@ -21,14 +21,6 @@ public interface ItemCollector<I extends Item>
     List<I> collect(File file);
 
     /**
-     * Collect a limited number of items from a file.
-     * 
-     * @param file
-     * @return
-     */
-    List<I> collect(File file, int limit);
-
-    /**
      * Collect all filtered items from a file.
      * 
      * @param file
@@ -36,15 +28,4 @@ public interface ItemCollector<I extends Item>
      * @return
      */
     List<I> collect(File file, Predicate<I> filter);
-
-    /**
-     * Collect a limited number of filtered items from a file.
-     * 
-     * @param file
-     * @param predicate
-     * @param limit
-     *            if 0 collect all
-     * @return
-     */
-    List<I> collect(File file, Predicate<I> filter, int limit);
 }

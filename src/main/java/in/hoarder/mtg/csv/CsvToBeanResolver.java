@@ -25,7 +25,7 @@ import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
  * @author skoogiz
  *
  */
-public class CsvToBeanResolver<T extends CsvBean<?>>
+public class CsvToBeanResolver<T extends CsvBean>
 {
     // Initialize logger
     private static Logger logger = LoggerFactory.getLogger(CsvToBeanResolver.class);

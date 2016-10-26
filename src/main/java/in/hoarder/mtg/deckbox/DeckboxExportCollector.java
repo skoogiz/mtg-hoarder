@@ -8,7 +8,7 @@ import java.util.List;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 import com.opencsv.bean.MappingStrategy;
 
-import in.hoarder.mtg.item.AbstractItemCollector;
+import in.hoarder.mtg.item.AbstractCsvItemCollector;
 import in.hoarder.mtg.item.Item;
 import in.hoarder.mtg.item.ItemCollector;
 
@@ -19,11 +19,11 @@ import in.hoarder.mtg.item.ItemCollector;
  * @author skoogiz
  *
  */
-public class DeckboxItemCollector extends AbstractItemCollector<DeckboxItem, DeckboxBean>
+public class DeckboxExportCollector extends AbstractCsvItemCollector<DeckboxItem, DeckboxBean>
 {
     private final HeaderColumnNameMappingStrategy<DeckboxBean> strategy;
 
-    public DeckboxItemCollector()
+    public DeckboxExportCollector()
     {
         this.strategy = new HeaderColumnNameMappingStrategy<>();
         this.strategy.setType(DeckboxBean.class);
@@ -33,5 +33,11 @@ public class DeckboxItemCollector extends AbstractItemCollector<DeckboxItem, Dec
     public MappingStrategy<DeckboxBean> getStrategy()
     {
         return strategy;
+    }
+
+    @Override
+    protected DeckboxItem beanToItem(DeckboxBean bean)
+    {
+        return DeckboxItem.create(bean);
     }
 }
